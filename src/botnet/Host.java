@@ -3,19 +3,13 @@ package botnet;
 public class Host implements Comparable<Host>{
 	private int ID;
 	private double score;//½©Ê¬µÃ·Ö
-	private String ip;
+
 	private int clusterIndex;
 	public int getClusterIndex() {
 		return clusterIndex;
 	}
 	public void setClusterIndex(int clusterIndex) {
 		this.clusterIndex = clusterIndex;
-	}
-	public String getIp() {
-		return ip;
-	}
-	public void setIp(String ip) {
-		this.ip = ip;
 	}
 	public double getScore() {
 		return score;
@@ -32,7 +26,7 @@ public class Host implements Comparable<Host>{
 	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof Host){
-			if(this.ip.equals(((Host)obj).getIp())){
+			if(this.ID == ((Host)obj).getID()){
 				return true;
 			}
 		}
@@ -40,12 +34,7 @@ public class Host implements Comparable<Host>{
 	}
 	@Override
 	public int hashCode() {
-		char [] arr = this.getIp().toCharArray();
-		int code = 0;
-		for(int i =0;i<arr.length;i++){
-			code += (int)arr[i];
-		}
-		return code;
+		return ID;
 	}
 	@Override
 	public int compareTo(Host o) {
@@ -59,7 +48,6 @@ public class Host implements Comparable<Host>{
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return this.ID+","+this.clusterIndex;
 	}
 	
