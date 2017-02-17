@@ -21,7 +21,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 import weka.core.converters.ArffSaver;
-
+//test
 public class Main {
 	private static int a = 0;
 	public static final  String INPUT1 = "data8.arff";
